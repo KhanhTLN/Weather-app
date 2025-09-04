@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather app</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' 
+     rel='stylesheet'>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="PRO-logo.png" alt="">
+            <h2>PRO<br>WEATHER</h2>
+        </div>
+        <ul class="sidebar-links">
+            <!-- Home - current weather -->
+            <li>
+                <a href="#" onclick="showSection('home-screen')">
+                    <span class="material-symbols-outlined">home</span>Home
+                </a>
+            </li>
+            
+            <!-- Map -->
+            <li>
+                <a href="#" onclick="showSection('map-screen', event); showMyLocationOnMap();">
+                    <span class="material-symbols-outlined">location_on</span>Maps
+                </a>
+            </li>
+
+            
+            <!-- Calendar -->
+            <li>
+                <a href="#" onclick="showSection('calendar-screen')">
+                    <span class="material-symbols-outlined">calendar_today</span>Calendar
+                </a>
+            </li>
+
+            <!-- Weather forecast for next 3 days -->
+            <!-- <li>
+                <a href="#" onclick="showSection('forecast-screen')">
+                    <span class="material-symbols-outlined">mist</span>Forecast
+                </a>
+            </li> -->
+            
+            <!-- Setting (Dark/Light mode, transfer between C and F degree, transfer language) -->
+            <li>
+                <a href="#" onclick="showSection('setting-screen')">
+                    <span class="material-symbols-outlined">settings</span>Setting
+                </a>
+            </li>
+        </ul>
+        
+        <div class="bottom-box">
+            <!-- About me -->
+            <h4>About me</h4>
+            <div class="author-profile">
+                <div class="image">
+                    <img src="profile-img.jpg" alt="">
+                </div>
+                <div class="author-details">
+                    <h3>Tran Le Nam Khanh</h3>
+                    <span>Developer</span>
+                </div>  
+            </div>
+
+            <!-- Direct me -->
+            <div class="media-button">
+                <a href="https://www.facebook.com/tl.namkhanh/?locale=vi_VN"
+                   class="link" 
+                   style="background: #4267b2"
+                   target="_blank">
+                    <i class='bx bxl-facebook'></i>
+                </a>
+
+                <a href="https://www.youtube.com/@khanhtranlenam2743" target="_blank" class="link" style="background: #ff0000">
+                    <i class='bx bxl-youtube'></i>
+                </a>
+                <a href="https://www.instagram.com/tl.nkhanh/" target="_blank" class="link" style="background: #e1306c">
+                    <i class='bx bxl-instagram' ></i>
+                </a>
+            </div>
+        </div>
+        
+    </aside>
+
+
+    <main>
+        <div class="screen">
+
+            <!-- Home -->
+            <section id="home-screen">
+                <div class="grid-container1">
+
+                    <!-- weather now -->
+                    <div class="weather-card">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search...">
+                            <button class="search-btn">
+                                <span class="material-symbols-outlined">search</span>
+                            </button>
+                        </div>
+                        
+                        <div class="weather-result">
+                            
+                        </div>
+                    </div>
+
+                    <!-- today's highlight -->
+                    <div class="highlight-card">
+                        <div class="card">
+                            Wind Speed
+                            <div class="wind-speed"></div>
+                        </div>
+                        <div class="card">
+                            UV Index
+                            <div class="UV-index"></div>
+                        </div>
+                        <div class="card">
+                            Sunrise & Sunset
+                            <div class="sunrise-sunset"></div>
+                        </div>
+                        <div class="card">
+                            Wind Direction
+                            <div class="wind-direction"></div>
+                        </div>
+                        <div class="card">
+                            Humidity
+                            <div class="humidity"></div>
+                        </div>
+                        <div class="card">
+                            Pressure
+                            <div class="pressure"></div>
+                        </div>
+                    </div>
+                </div>
+            
+
+                <div class="grid-container2">
+
+                    <!-- forecast -->
+                    <div class="forecast-card">
+                    </div>
+                
+                    <!-- city image -->
+                    <div class="map-card">
+                    </div>
+                </div>
+            </section>
+            
+
+            <section id="map-screen">
+                <iframe 
+                    id="map-frame"
+                    width="1200" 
+                    height="900" 
+                    style="border:0;"
+                    allowfullscreen 
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </section>
+
+
+
+            <section id="calendar-screen">
+                <div class="calendar-header">
+                    <button id="prev-month">←</button>
+                    <h2 id="month-year"></h2>
+                    <button id="next-month">→</button>
+                </div>
+                <table class="calendar">
+                    <thead>
+                        <tr>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                            <th>Sun</th>
+                        </tr>
+                    </thead>
+                    <tbody id="calendar-body">
+                    </tbody>
+                </table>
+            </section>
+
+    </main>
+
+    <script src="Weather.js"></script>
+</body>
+</html>
