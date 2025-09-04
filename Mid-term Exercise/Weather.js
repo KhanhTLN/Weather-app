@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   showSection("home-screen");
 });
 
-const API_KEY = "424f83dafd397e083540af917fc3e431";
+const KKK = "424f83dafd397e083540af917fc3e431";
 
 const searchBtn = document.querySelector(".search-btn");
 const cityInput = document.querySelector(".search-box input");
@@ -40,7 +40,7 @@ async function getWeather() {
   try {
     // Lấy dữ liệu thời tiết hiện tại
     const res = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric&lang=en`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${KKK}&units=metric&lang=en`
     );
     const data = await res.json();
 
@@ -267,3 +267,4 @@ document.getElementById("next-month").addEventListener("click", () => {
   renderCalendar(currentDate);
 });
 renderCalendar(currentDate);
+
