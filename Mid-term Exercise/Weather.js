@@ -118,7 +118,7 @@ async function getWeather() {
 
     // Lấy dự báo 5 ngày
     const forecastRes = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&lang=en`
+      `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${KKK}&units=metric&lang=en`
     );
     const forecastData = await forecastRes.json();
 
@@ -267,4 +267,5 @@ document.getElementById("next-month").addEventListener("click", () => {
   renderCalendar(currentDate);
 });
 renderCalendar(currentDate);
+
 
